@@ -1,0 +1,309 @@
+<html>
+    <head>
+
+        <style>
+            body {
+                margin: 0px;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+               "Helvetica Neue", sans-serif;
+            }
+            .U26fgb mUbCce fKz7Od kpPxtd QMuaBc M9Bg4d {
+                display: none;
+            }
+            #updatebox {
+                top: 0px;
+                left: 0px;
+                position: absolute;
+                background:  #006DAE;
+                width: 100%;
+                height: 100%;
+                color: #EBF3F9;
+                font-size: 21px;
+            }
+            #blackscreen {
+                background-color: black;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                display: none;
+            }
+            #blackscreen2 {
+                background-color: black;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                display: none;
+            }
+            #restartscreen {
+                top: 0px;
+                left: 0px;
+                position: absolute;
+                background:  #006DAE;
+                width: 100%;
+                height: 100%;
+                color: #EBF3F9;
+                font-size: 21px;
+                display: none;
+            }
+            #subupdatebox {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                width: 450px;
+                height: 200px;
+                text-align: center;
+            }
+            #loadanimation {
+                margin-bottom: 15px;;
+            }
+            #bottom {
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            #windowslogo {
+                margin: 0;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            #rebootscherm {
+                margin: 0;
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                width: 450px;
+                height: 200px;
+                text-align: center;
+                color: white;
+                font-size: 21px;
+            }
+
+
+
+
+            .lds-roller {
+                display: inline-block;
+                position: relative;
+                width: 80px;
+                height: 80px;
+            }
+            .lds-roller div {
+                animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                transform-origin: 40px 40px;
+            }
+            .lds-roller div:after {
+                content: " ";
+                display: block;
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: #fff;
+                margin: -4px 0 0 -4px;
+            }
+                .lds-roller div:nth-child(1) {
+                animation-delay: -0.036s;
+            }
+                .lds-roller div:nth-child(1):after {
+                top: 63px;
+                left: 63px;
+            }
+                .lds-roller div:nth-child(2) {
+                animation-delay: -0.072s;
+            }
+                .lds-roller div:nth-child(2):after {
+                top: 68px;
+                left: 56px;
+            }
+                .lds-roller div:nth-child(3) {
+                animation-delay: -0.108s;
+            }
+                .lds-roller div:nth-child(3):after {
+                top: 71px;
+                left: 48px;
+            }
+                .lds-roller div:nth-child(4) {
+                animation-delay: -0.144s;
+            }
+                .lds-roller div:nth-child(4):after {
+                top: 72px;
+                left: 40px;
+            }
+                .lds-roller div:nth-child(5) {
+                animation-delay: -0.18s;
+            }
+                .lds-roller div:nth-child(5):after {
+                top: 71px;
+                left: 32px;
+            }
+                .lds-roller div:nth-child(6) {
+                animation-delay: -0.216s;
+            }
+                .lds-roller div:nth-child(6):after {
+                top: 68px;
+                left: 24px;
+            }
+                .lds-roller div:nth-child(7) {
+                animation-delay: -0.252s;
+            }
+                .lds-roller div:nth-child(7):after {
+                top: 63px;
+                left: 17px;
+            }
+                .lds-roller div:nth-child(8) {
+                animation-delay: -0.288s;
+            }
+                .lds-roller div:nth-child(8):after {
+                top: 56px;
+                left: 12px;
+            }
+            @keyframes lds-roller {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            #windows {
+                background-color: #05ADE8;
+                width: 200px;
+                height: 150px;
+                transform: perspective(400px) rotateY(-25deg);
+            }
+            #windows::after, #windows::before {
+                content: '';
+                background: black;
+                height: 100%;
+                width: 7px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+            }
+            #windows::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 7px;
+                width: 100%;
+                margin-top: -5px;
+                margin-left: 0;
+                background: black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <script>
+            var teller = 0;
+            var teller2 = 0;
+            var teller3 = 0;
+            var teller4 = 0;
+			
+			var stage1time = 2500;
+			var stage2time = 1000;
+			var stage3time = 1000;
+			var stage4time = 1000;
+
+            
+            interv1 = setInterval(stage1, stage1time);
+        
+            function stage1() {
+                teller = teller + 1;
+                document.getElementById('counter').innerHTML = "" + teller + "%";
+                if (teller == 100) {
+                    clearInterval(interv1);
+                    teller = 0;
+                    document.getElementById('counter').innerHTML = "" + teller + "%";
+                    document.getElementById('updatebox').style.display = "none";
+                    document.getElementById('restartscreen').style.display = "block";
+                    interv2 = setInterval(stage2, stage2time);
+                }
+            };
+
+            function stage2() {
+                teller2 = teller2 + 1;
+                if (teller2 == 4) {
+                    clearInterval(interv2);
+                    teller2 = 0;
+                    document.getElementById('blackscreen').style.display = "block";
+                    document.getElementById('restartscreen').style.display = "none";
+                    interv3 = setInterval(stage3, stage3time);
+                };
+            };
+            function stage3() {
+                teller3 = teller3 + 1;
+                if (teller3 == 4) {
+                    clearInterval(interv3);
+                    teller3 = 0;
+                    document.getElementById('blackscreen').style.display = "none";
+                    document.getElementById('blackscreen2').style.display = "block";
+                    interv4 = setInterval(stage4, stage4time);
+                };
+            }
+            function stage4() {
+                teller4 = teller4 + 1;
+                if (teller4 == 6) {
+                    teller4 = 0;
+                    clearInterval(interv4);
+                    document.getElementById('blackscreen2').style.display = "none";
+                    document.getElementById('updatebox').style.display = "block";
+                    interv1 = setInterval(stage1, stage1time);
+                };
+            };
+        </script>
+
+
+        <div id="updatebox">
+            <div id="subupdatebox">
+                <div id="loadanimation"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+                <text>Working on updates </text><text id="counter">0%</text> complete.<br>
+                Don't turn off your PC. This will take a while.
+            </div>
+
+            <div id="bottom">
+                Your PC will restart several times
+            </div>
+        </div>
+
+
+        <div id="restartscreen">
+            <div id="subupdatebox">
+                <div id="loadanimation"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+                Restarting
+            </div>
+        </div>
+
+
+        <div id="blackscreen">
+
+        </div>
+
+        <div id="blackscreen2">
+            <div id="windowslogo">
+                <div id="windows"></div>
+            </div>
+            <div id="rebootscherm">
+                <div id="loadanimation"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><br>
+                Configuring update.
+            </div>
+        </div>
+    </body>
+</html>
